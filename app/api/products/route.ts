@@ -29,16 +29,14 @@ export async function POST(request: Request) {
     const fileBuffer = Buffer.from(await imageFile.arrayBuffer());
     const fileName = `${Date.now()}-${imageFile.name.replace(/[^a-zA-Z0-9.]/g, '')}`;
     
-    // Note: We use the public supabase client here for storage if RLS is public, 
-    // or we could use the server client if we have a service role. 
-    // Given 'product-images' should be public readable but restricted upload,
-    // in a production app you'd use a service role here or proper RLS.
-    const { data: uploadData, error: uploadError } = await supabase.storage
+    // We use the supabaseServer client to ensure the upload is authorized via the user's session
+    const { data: uploadData, error: uploadError } = await supabaseServer.storage
       .from('product-images')
       .upload(fileName, fileBuffer, {
         contentType: imageFile.type,
         upsert: false
       });
+
 
     if (uploadError) {
       console.error('Supabase Storage Error:', uploadError);

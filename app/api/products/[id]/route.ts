@@ -23,7 +23,7 @@ export async function DELETE(request: Request, { params }: { params: Promise<{ i
       const fileName = urlParts[urlParts.length - 1];
       
       // Attempt removal from storage
-      await supabase.storage
+      await supabaseServer.storage
         .from('product-images')
         .remove([fileName]);
     }
