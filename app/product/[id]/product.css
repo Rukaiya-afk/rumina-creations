@@ -1,0 +1,114 @@
+.product-detail-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: var(--spacing-lg);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--color-slate);
+}
+
+.back-link:hover {
+  color: var(--color-accent);
+}
+
+.product-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+  align-items: start;
+}
+
+.product-image-section {
+  background-color: var(--color-oatmeal);
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.detail-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.product-info-section {
+  padding: var(--spacing-md) 0;
+}
+
+.detail-title {
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-xs);
+}
+
+.detail-subtitle {
+  font-family: var(--font-inter), sans-serif;
+  color: var(--color-slate);
+  margin-bottom: var(--spacing-lg);
+  font-style: italic;
+  font-size: 0.95rem;
+}
+
+.specs-list {
+  margin-bottom: var(--spacing-xl);
+}
+
+.spec-item {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--spacing-sm) 0;
+  font-size: 0.9rem;
+}
+
+.spec-label {
+  color: var(--color-slate);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+}
+
+.spec-value {
+  color: var(--color-accent);
+  text-align: right;
+  max-width: 60%;
+}
+
+.spec-divider {
+  border: 0;
+  border-top: 1px solid var(--color-oatmeal-dark);
+  margin: 0;
+}
+
+.cta-section {
+  margin-top: var(--spacing-xl);
+}
+
+.btn-whatsapp {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  padding: var(--spacing-md);
+  font-size: 1rem;
+  /* WhatsApp specific or keep brand colors */
+  background-color: #25D366; 
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.btn-whatsapp:hover {
+  background-color: #1ebe5d;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+}
+
+@media (max-width: 768px) {
+  .product-detail-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+}

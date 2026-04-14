@@ -1,0 +1,135 @@
+:root {
+  --color-white: #ffffff;
+  --color-oatmeal: #f7f5f0;
+  --color-oatmeal-dark: #e8e4db;
+  --color-slate: #4a5568;
+  --color-slate-dark: #2d3748;
+  --color-accent: #2b3341;
+
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 4rem;
+
+  --border-radius: 4px;
+  --transition: all 0.3s ease;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--color-white);
+  color: var(--color-slate-dark);
+  font-family: var(--font-inter), sans-serif;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6, .logo {
+  font-family: var(--font-playfair), serif;
+  font-weight: 400;
+  color: var(--color-accent);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+button, .btn {
+  font-family: var(--font-inter), sans-serif;
+  cursor: pointer;
+  border: none;
+  background: var(--color-accent);
+  color: var(--color-white);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: 0; /* Minimalist modern */
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: var(--transition);
+}
+
+button:hover, .btn:hover {
+  background: var(--color-slate);
+}
+
+.btn-secondary {
+  background: var(--color-oatmeal);
+  color: var(--color-accent);
+  border: 1px solid var(--color-oatmeal-dark);
+}
+
+.btn-secondary:hover {
+  background: var(--color-oatmeal-dark);
+}
+
+/* Layout */
+.site-header {
+  background-color: var(--color-white);
+  /* slight border for crispness */
+  border-bottom: 1px solid var(--color-oatmeal);
+  padding: var(--spacing-md) var(--spacing-lg);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  gap: var(--spacing-lg);
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.nav-links a:hover {
+  color: var(--color-slate);
+}
+
+.main-content {
+  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding: var(--spacing-xl) var(--spacing-lg);
+}
+
+.site-footer {
+  text-align: center;
+  padding: var(--spacing-lg);
+  background-color: var(--color-oatmeal);
+  color: var(--color-slate);
+  font-size: 0.85rem;
+}
+
+/* Utilities */
+.text-center {
+  text-align: center;
+}
+
+.my-lg {
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+}
