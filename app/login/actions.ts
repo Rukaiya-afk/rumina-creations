@@ -15,7 +15,7 @@ export async function signIn(formData: FormData) {
   });
 
   if (error) {
-    return redirect(`/login?error=${encodeURIComponent(error.message)}`);
+    return redirect(`/admin?error=${encodeURIComponent(error.message)}`);
   }
 
   return redirect('/admin');
@@ -24,5 +24,6 @@ export async function signIn(formData: FormData) {
 export async function signOut() {
   const supabase = await createClient();
   await supabase.auth.signOut();
-  return redirect('/login');
+  return redirect('/admin');
 }
+
